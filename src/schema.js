@@ -3,7 +3,22 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
     type Query {
         recommendGames(type: Type): [Game]!
-        homeRecommends: [Recommend]!
+        homeRecommends: Recommends!
+    }
+    type Recommends{
+        games: [Recommend]!
+        bottomLeft: Recommend!
+        bottomRight: Recommend_2! 
+    }
+    type Recommend_2{
+        title: String!,
+        icon: String!,
+        items: [BigSlotsCard]!
+    }
+    type BigSlotsCard{
+        product: Game!,
+        image_1: String!,
+        image_2: String
     }
     type Recommend{
         title: String!
@@ -16,6 +31,8 @@ const typeDefs = gql`
         data: [Game]
     }
     enum Type{
+        DISCOVER
+        HEART
         SLOTS
         LIVE
         PT
