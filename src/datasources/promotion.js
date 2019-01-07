@@ -1,10 +1,6 @@
 const DataSource8xx = require('./DataSource8xx');
 
 class PromotionAPI extends DataSource8xx {
-    constructor() {
-        super();
-        this.baseURL = 'https://api.8xxbet.com/';
-    }
     promotionReducer(promotion){
         return {
             ...promotion,

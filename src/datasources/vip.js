@@ -1,10 +1,6 @@
 const DataSource8xx = require('./DataSource8xx');
 
 class VipAPI extends DataSource8xx {
-    constructor() {
-        super();
-        this.baseURL = 'https://api.8xxbet.com/';
-    }
     filterWelfare(value){ 
         return !['REBATE-SPORTS-RATE', 'REBATE-SLOTS-RATE', 'REBATE-LOTTERY-RATE', 'REBATE-LIVE-RATE'].includes(value.key)
     }
