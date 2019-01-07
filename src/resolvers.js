@@ -1,11 +1,19 @@
 module.exports = {
     Query: {
         recommendGames: async (_, {type}, {dataSources}) => dataSources.gameAPI.getRecommendGames(type),
+
+        promotions: async (_, __, {dataSources}) => dataSources.promotionAPI.getPromotions(),
+
+        upgrade: async(_, __, {dataSources}) => dataSources.vipAPI.upgradeProgress(),
         
         homeRecommends: async (_, __, {dataSources}) => {
-            const [SlotsRecommend, LIVERecommend] = await Promise.all([
+            const [SlotsRecommend, PTRecommend, Newest, Best, Discover, Heart] = await Promise.all([
                 dataSources.gameAPI.getRecommendGames('SLOTS'),
-                dataSources.gameAPI.getRecommendGames('LIVE'),
+                dataSources.gameAPI.getRecommendGames('PT'),
+                dataSources.gameAPI.getNewest(),
+                dataSources.gameAPI.getBest(),
+                dataSources.gameAPI.getDiscover(),
+                dataSources.gameAPI.getHeart(),
             ])
             return {
                 games: [
@@ -33,7 +41,7 @@ module.exports = {
                                     'en-GB': 'LIVE'
                                 }),
                                 code: 'LIVE',
-                                data: LIVERecommend,
+                                data: null,
                             }
                         ]
                     },
@@ -52,7 +60,7 @@ module.exports = {
                                     'en-GB': 'PT'
                                 }),
                                 code: 'PT',
-                                data: SlotsRecommend,
+                                data: PTRecommend,
                             },
                             {
                                 name: JSON.stringify({
@@ -61,7 +69,7 @@ module.exports = {
                                     'en-GB': 'MG'
                                 }),
                                 code: 'MG',
-                                data: LIVERecommend,
+                                data: null,
                             },
                             {
                                 name: JSON.stringify({
@@ -103,7 +111,7 @@ module.exports = {
                             {
                                 name: null,
                                 code: null,
-                                data: SlotsRecommend,
+                                data: Best,
                             },
                         ]
                     },
@@ -118,7 +126,7 @@ module.exports = {
                             {
                                 name: null,
                                 code: null,
-                                data: LIVERecommend,
+                                data: Newest,
                             },
                         ]
                     },
@@ -134,7 +142,7 @@ module.exports = {
                         {
                             name: null,
                             code: null,
-                            data: SlotsRecommend,
+                            data: Discover,
                         }
                     ]
                 },
@@ -154,31 +162,31 @@ module.exports = {
                         {
                             image_1: 'https://images-3.gog.com/a73e1509d4e311e0f8c21af33ec71cce28f6c0639168bf5d1d7c759c309d20cb_curated_collection_horizontal_tile.jpg',
                             image_2: 'https://images-2.gog.com/80f8b901eb7f0e8951059d6da9a2aa60b0d143b06a3b0d46d7f4a7b98519b36f.png',
-                            product: SlotsRecommend[0],   
+                            product: Heart[0],   
                         },
                         {
                             image_1: 'https://images-1.gog.com/5c705421e1f0b575d79560dcdf88abb1d37e2219f8f97e78e305fb3d62107fb8_curated_collection_vertical_tile.jpg',
-                            product: SlotsRecommend[1],   
+                            product: Heart[1],   
                         },
                         {
                             image_1: 'https://images-3.gog.com/17b02ac9f3bdfbd99e91fbbf37266a195ee6d764339150dbf1f64a057d13fb47_curated_collection_small_tile.jpg',
-                            product: SlotsRecommend[2],   
+                            product: Heart[2],   
                         },
                         {
                             image_1: 'https://images-4.gog.com/066f510c06fdb7eb52308ec023191bac19ffa57ea9d2c7a31d101895ccfd95bb_curated_collection_small_tile.jpg',
-                            product: SlotsRecommend[3],   
+                            product: Heart[3],   
                         },
                         {
                             image_1: 'https://images-2.gog.com/d868ed0c3f591d038c559f3b8e6a64f70b3c810aab12f430e0d1ca45c50bec52_curated_collection_small_tile.jpg',
-                            product: SlotsRecommend[4],   
+                            product: Heart[4],   
                         },
                         {
                             image_1: 'https://images-1.gog.com/b6ee8122a80feaa4a1fd99c0d60e454f66a99c9b87409ff233998abf14f64800_curated_collection_small_tile.jpg',
-                            product: SlotsRecommend[5],   
+                            product: Heart[5],   
                         },
                         {
                             image_1: 'https://images-3.gog.com/f37ab2e547342a1d641f60879c1ee0c703a8e4a9e736b7f94a665cd72cd7f305_curated_collection_vertical_tile.jpg',
-                            product: SlotsRecommend[6],   
+                            product: Heart[6],   
                         },
                     ]
                 },
@@ -186,3 +194,4 @@ module.exports = {
         }
     },
   }
+

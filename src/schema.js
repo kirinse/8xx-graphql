@@ -4,6 +4,40 @@ const typeDefs = gql`
     type Query {
         recommendGames(type: Type): [Game]!
         homeRecommends: Recommends!
+        promotions: [Promotion]!
+        upgrade: Upgrade
+    }
+    type Upgrade{
+        nextRank: String
+        conditions: [UpgradeCondition]!
+        award: [UpgradeAward]!
+    }
+    type UpgradeAward{
+        name: String!
+        value: String!
+        value_type: String!
+        image: String!
+    }
+    type UpgradeCondition{
+        name: String!
+        nowValue: Int!
+        upgradeValue: Int!
+        gradingValue: Int
+    }
+    type Promotion{
+        id: String!
+        title: String!
+        banner: String!
+        categories: [String]!
+        content: String
+        currency: String!
+        period: Period!
+        status: String!
+        max: String!
+    }
+    type Period{
+        from: String
+        to: String
     }
     type Recommends{
         games: [Recommend]!
