@@ -1,10 +1,6 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const DataSource8xx = require('./DataSource8xx');
 
-class GameAPI extends RESTDataSource {
-    constructor() {
-        super();
-        this.baseURL = 'https://api.8xxbet.com/';
-    }
+class GameAPI extends DataSource8xx {
     gameReducer(game){
         return {
             ...game,

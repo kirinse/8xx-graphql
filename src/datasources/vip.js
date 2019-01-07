@@ -1,10 +1,6 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const DataSource8xx = require('./DataSource8xx');
 
-class VipAPI extends RESTDataSource {
-    constructor() {
-        super();
-        this.baseURL = 'https://api.8xxbet.com/';
-    }
+class VipAPI extends DataSource8xx {
     filterWelfare(value){ 
         return !['REBATE-SPORTS-RATE', 'REBATE-SLOTS-RATE', 'REBATE-LOTTERY-RATE', 'REBATE-LIVE-RATE'].includes(value.key)
     }

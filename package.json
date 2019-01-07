@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon src/index.js",
+    "prod": "NODE_ENV=production node src/index.js",
     "start:ci": "node src/index.js"
   },
   "author": "",
