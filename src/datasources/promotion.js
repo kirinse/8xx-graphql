@@ -1,6 +1,6 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const DataSource8xx = require('./DataSource8xx');
 
-class PromotionAPI extends RESTDataSource {
+class PromotionAPI extends DataSource8xx {
     constructor() {
         super();
         this.baseURL = 'https://api.8xxbet.com/';
