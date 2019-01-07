@@ -6,6 +6,6 @@ COPY package*.json /usr/src/app/
 COPY src /usr/src/app
 
 RUN npm install --production
-EXPOSE 80
+EXPOSE 4000
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "prod" ]
