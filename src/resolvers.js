@@ -17,39 +17,39 @@ module.exports = {
             ])
             return {
                 games: [
+                    // {
+                    //     title: JSON.stringify({
+                    //         'zh-CN': '为您推荐', 
+                    //         'zh-TW': '為您推薦',
+                    //         'en-GB': 'Recommend For You'
+                    //     }),
+                    //     icon: 'star-home',
+                    //     items: [
+                    //         {
+                    //             name: JSON.stringify({
+                    //                 'zh-CN': '老虎机', 
+                    //                 'zh-TW': '老虎機',
+                    //                 'en-GB': 'SLOTS'
+                    //             }),
+                    //             code: 'SLOTS',
+                    //             data: SlotsRecommend,
+                    //         },
+                    //         {
+                    //             name: JSON.stringify({
+                    //                 'zh-CN': '真人', 
+                    //                 'zh-TW': '真人',
+                    //                 'en-GB': 'LIVE'
+                    //             }),
+                    //             code: 'LIVE',
+                    //             data: null,
+                    //         }
+                    //     ]
+                    // },
                     {
                         title: JSON.stringify({
-                            'zh-CN': '为您推荐', 
-                            'zh-TW': '為您推薦',
-                            'en-GB': 'Recommend For You'
-                        }),
-                        icon: 'star-home',
-                        items: [
-                            {
-                                name: JSON.stringify({
-                                    'zh-CN': '老虎机', 
-                                    'zh-TW': '老虎機',
-                                    'en-GB': 'SLOTS'
-                                }),
-                                code: 'SLOTS',
-                                data: SlotsRecommend,
-                            },
-                            {
-                                name: JSON.stringify({
-                                    'zh-CN': '真人', 
-                                    'zh-TW': '真人',
-                                    'en-GB': 'LIVE'
-                                }),
-                                code: 'LIVE',
-                                data: null,
-                            }
-                        ]
-                    },
-                    {
-                        title: JSON.stringify({
-                            'zh-CN': '发行商重点推荐', 
-                            'zh-TW': '發行商重點推薦',
-                            'en-GB': 'Publishers Recommendations'
+                            'zh-CN': '品牌推荐', 
+                            'zh-TW': '品牌推薦',
+                            'en-GB': 'Brand Recommendations'
                         }),
                         icon: 'megaphone',
                         items: [
@@ -100,36 +100,36 @@ module.exports = {
                             },
                         ]
                     },
-                    {
-                        title: JSON.stringify({
-                            'zh-CN': '年度最佳', 
-                            'zh-TW': '年度最佳',
-                            'en-GB': 'Best of the year'
-                        }),
-                        icon: 'star-home',
-                        items: [
-                            {
-                                name: null,
-                                code: null,
-                                data: Best,
-                            },
-                        ]
-                    },
-                    {
-                        title: JSON.stringify({
-                            'zh-CN': '查看最新内容', 
-                            'zh-TW': '查看最新內容',
-                            'en-GB': 'Newest'
-                        }),
-                        icon: 'megaphone',
-                        items: [
-                            {
-                                name: null,
-                                code: null,
-                                data: Newest,
-                            },
-                        ]
-                    },
+                    // {
+                    //     title: JSON.stringify({
+                    //         'zh-CN': '年度最佳', 
+                    //         'zh-TW': '年度最佳',
+                    //         'en-GB': 'Best of the year'
+                    //     }),
+                    //     icon: 'star-home',
+                    //     items: [
+                    //         {
+                    //             name: null,
+                    //             code: null,
+                    //             data: Best,
+                    //         },
+                    //     ]
+                    // },
+                    // {
+                    //     title: JSON.stringify({
+                    //         'zh-CN': '查看最新内容', 
+                    //         'zh-TW': '查看最新內容',
+                    //         'en-GB': 'Newest'
+                    //     }),
+                    //     icon: 'megaphone',
+                    //     items: [
+                    //         {
+                    //             name: null,
+                    //             code: null,
+                    //             data: Newest,
+                    //         },
+                    //     ]
+                    // },
                 ],
                 bottomLeft: {
                     title: JSON.stringify({
@@ -137,7 +137,7 @@ module.exports = {
                         'zh-TW': '發現遊戲',
                         'en-GB': 'Discover Games'
                     }),
-                    icon: 'compass_discover',
+                    icon: 'compass',
                     items: [
                         {
                             name: null,
