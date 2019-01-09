@@ -3,8 +3,8 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 class DataSource8xx extends RESTDataSource{
     constructor() {
         super();
-        // this.baseURL = process.env.REST_ADDRESS;
-        this.baseURL = 'https://api.8xxbet.com/'
+        this.baseURL = process.env.REST_ADDRESS;
+        // this.baseURL = 'https://api.8xxbet.com/'
     }
     get(path, params = {}, init = {}){
         return super.get(path, params, {
