@@ -2,10 +2,13 @@ const DataSource8xx = require('./DataSource8xx');
 
 class GameAPI extends DataSource8xx {
     gameReducer(game){
+        if(!game.name || !game.brand || !game.brand.name || !game.categories){
+            console.log('have')
+        }
         return {
             ...game,
             name: JSON.stringify(game.name),
-            brand: game.brand ? {...game.brand, name: JSON.stringify(game.brand)} : {code: 'AG'},
+            brand: game.brand ? {...game.brand, name: JSON.stringify(game.brand.name)} : {code: 'AG'},
             categories: game.categories ? game.categories.map(item => ({...item, name: JSON.stringify(item.name)})) : []
         }
     }
@@ -19,8 +22,8 @@ class GameAPI extends DataSource8xx {
                 res = await this.get('search', {product_code: 'LIVE', is_recommend: 1});
                 return res && res.data.LIVE ? res.data.LIVE.slice(0, 30).map(l => this.gameReducer(l)) : [];
             default:
-                res = await this.get('search', {brands: type});
-                return res ? res.data.SLOTS.concat(res.data.LIVE).slice(0, 30).map(l => this.gameReducer(l)) : [];
+                res = await this.get('search', {brands: type, is_recommend: 1});
+                return res ? (res.data.LIVE ? res.data.LIVE : []).concat(res.data.SLOTS).slice(0, 30).map(l => this.gameReducer(l)) : [];
         }
     }
     async getNewest(){
