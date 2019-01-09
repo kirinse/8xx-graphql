@@ -81,8 +81,8 @@ const typeDefs = gql`
         demo: Demo
         hasJackpot: Boolean
         id: String!
-        image: String!
-        imageServer: Int!
+        image: String
+        imageServer: Int
         isComingSoon: Boolean
         isNew: Boolean!
         isRecommend: Boolean!
