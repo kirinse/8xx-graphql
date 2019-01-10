@@ -8,15 +8,6 @@ const promotionAPI = require('./datasources/promotion')
 const vipAPI = require('./datasources/vip')
 const indexRouter = require('./routers/index')
 
-const GRAPHQL_PLAYGROUND_CONFIG = {
-    settings: {
-        'editor.cursorShape': 'line',
-        'editor.fontSize': 14,
-        'editor.reuseHeaders': true,
-        'editor.theme': 'dark'
-    }
-};
-
 const server = new ApolloServer({ 
     typeDefs,
     resolvers,
@@ -25,7 +16,7 @@ const server = new ApolloServer({
         promotionAPI: new promotionAPI(),
         vipAPI: new vipAPI()
     }),
-    playground: process.env.NODE_ENV === 'production' ? false : GRAPHQL_PLAYGROUND_CONFIG
+    playground: process.env.NODE_ENV !== 'production'
 });
 
 const app = express()
