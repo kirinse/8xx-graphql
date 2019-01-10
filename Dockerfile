@@ -1,4 +1,4 @@
-FROM node:8.11.4-alpine
+FROM node:8.15.0-alpine
 MAINTAINER Floyd Joe<floyd@e8bet.net>
 
 WORKDIR /usr/src/app
