@@ -1,9 +1,12 @@
-const { ApolloServer } = require('apollo-server');
+const express = require('express')
+const { ApolloServer } = require('apollo-server-express');
+
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const gameAPI = require('./datasources/game')
 const promotionAPI = require('./datasources/promotion')
 const vipAPI = require('./datasources/vip')
+const indexRouter = require('./routers/index')
 
 const GRAPHQL_PLAYGROUND_CONFIG = {
     settings: {
@@ -25,6 +28,13 @@ const server = new ApolloServer({
     playground: process.env.NODE_ENV === 'production' ? false : GRAPHQL_PLAYGROUND_CONFIG
 });
 
-server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+const app = express()
+app.use('/', indexRouter);
+
+server.applyMiddleware({app})
+
+app.listen(4000, () => {console.log(`🚀 Server ready`);})
+
+// server.listen().then(({ url }) => {
+//   console.log(`🚀 Server ready at ${url}`);
+// });
