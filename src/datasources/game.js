@@ -9,6 +9,14 @@ class GameAPI extends DataSource8xx {
             categories: game.categories ? game.categories.map(item => ({...item, name: JSON.stringify(item.name)})) : []
         }
     }
+    shuffleArray(prevArr) {
+        const array = [...prevArr]
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array
+    }
     async getRecommendGames(type) {
         let res
         switch(type){
@@ -20,7 +28,7 @@ class GameAPI extends DataSource8xx {
                 return res && res.data.LIVE ? res.data.LIVE.slice(0, 30).map(l => this.gameReducer(l)) : [];
             default:
                 res = await this.get('search', {brands: type, is_recommend: 1});
-                return res ? (res.data.LIVE ? res.data.LIVE : []).concat(res.data.SLOTS).slice(0, 30).map(l => this.gameReducer(l)) : [];
+                return res ? this.shuffleArray((res.data.LIVE ? res.data.LIVE : []).concat(res.data.SLOTS)).slice(0, 30).map(l => this.gameReducer(l)) : [];
         }
     }
     async getNewest(){
