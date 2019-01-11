@@ -29,7 +29,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-10-18T22:36:52+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "每日存送！只限老虎机", "zh-TW": "每日存送！只限老虎机", "zh-CN": "每日存送！只限老虎机"}),
-                max: 'max-￥58'
+                max: 'max-￥98'
             },
             {
                 banner: "829b669d51c7558bc750042f8cb4bc46",
