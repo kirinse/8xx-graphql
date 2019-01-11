@@ -28,8 +28,8 @@ class PromotionAPI extends DataSource8xx {
                 id: "3457b880-cde9-11e8-bd33-afa08e04259b",
                 period: {from: "2018-10-18T22:36:52+00:00", to: null},
                 status: "publish",
-                title: JSON.stringify({"en-GB": "每日存送！只限老虎机", "zh-TW": "每日存送！只限老虎机", "zh-CN": "每日存送！只限老虎机"}),
-                max: 'max-￥98'
+                title: JSON.stringify({"en-GB": "老虎机每日存送", "zh-TW": "老虎机每日存送", "zh-CN": "老虎机每日存送"}),
+                max: 'upTo-￥98'
             },
             {
                 banner: "829b669d51c7558bc750042f8cb4bc46",
@@ -39,7 +39,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-10-16T06:36:12+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "首存红利", "zh-TW": "首存紅利", "zh-CN": "首存红利"}),
-                max: 'max-100%'
+                max: '100%'
             },
             {
                 banner: "9ab9eef10d4253acc64d767626950066",
@@ -49,7 +49,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-10-18T17:26:44+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "笔笔存笔笔送", "zh-TW": "笔笔存笔笔送", "zh-CN": "笔笔存笔笔送"}),
-                max: 'max-无上限'
+                max: '无上限'
             },
             {
                 banner: "d4de11700d84addcfe1266847162e6f8",
@@ -59,7 +59,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-10-03T05:46:49+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "天天救援金", "zh-TW": "天天救援金", "zh-CN": "天天救援金"}),
-                max: 'max-￥3888'
+                max: 'upTo-￥3888'
             },
             {
                 banner: "6bdba021958dce49a142d1fbedf41d9a",
@@ -69,7 +69,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-10-03T14:21:49+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "千百倍额外奖励", "zh-TW": "千百倍额外奖励", "zh-CN": "千百倍额外奖励"}),
-                max: 'max-￥1599'
+                max: 'upTo-￥1599'
             },
             {
                 banner: "88abf86503443a2be0b1e179baa5abb1",
@@ -79,7 +79,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-10-05T13:59:24+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "老虎机返水", "zh-TW": "老虎机返水", "zh-CN": "老虎机返水"}),
-                max: 'max-￥58888'
+                max: 'upTo-￥58888'
             },
             {
                 banner: "7f1b9dcc4ff558adc23e98346568e6ee",
@@ -89,7 +89,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-09-08T16:32:24+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "真人返水", "zh-TW": "真人返水", "zh-CN": "真人返水"}),
-                max: 'max-￥58888'
+                max: 'upTo-￥58888'
             },
             {
                 banner: "307896c2acadcd9ec464730cbfa5422b",
@@ -99,7 +99,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-09-24T05:33:08+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "体育返水", "zh-TW": "体育返水", "zh-CN": "体育返水"}),
-                max: 'max-￥58888'
+                max: 'upTo-￥58888'
             },
             {
                 banner: "f41d50ec853717ccb5de3d275349d8ea",
@@ -109,7 +109,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-09-16T13:04:33+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "真人体育首存优惠", "zh-TW": "真人体育首存优惠", "zh-CN": "真人体育首存优惠"}),
-                max: 'max-￥1599'
+                max: 'upTo-￥1599'
             },
             {
                 banner: "0ff7557c48dcadbea550103478f953ee",
@@ -119,7 +119,7 @@ class PromotionAPI extends DataSource8xx {
                 period: {from: "2018-09-03T08:00:00+00:00", to: null},
                 status: "publish",
                 title: JSON.stringify({"en-GB": "老虎机每周存送", "zh-TW": "老虎机每周存送", "zh-CN": "老虎机每周存送"}),
-                max: 'max-159%'
+                max: 'upTo-159%'
             },
         ]
         return res;
