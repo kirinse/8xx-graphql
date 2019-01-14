@@ -17,17 +17,17 @@ class GameAPI extends DataSource8xx {
         }
         return array
     }
-    async getRecommendGames(type) {
+    async getRecommendGames(type, authorization) {
         let res
         switch(type){
             case 'SLOTS':
-                res = await this.get('search', {product_code: 'SLOTS', is_recommend: 1});
+                res = await this.getWithToken('search', {product_code: 'SLOTS', is_recommend: 1}, authorization);
                 return res ? res.data.SLOTS.slice(0, 30).map(l => this.gameReducer(l)) : [];
             case 'LIVE':
-                res = await this.get('search', {product_code: 'LIVE', is_recommend: 1});
+                res = await this.getWithToken('search', {product_code: 'LIVE', is_recommend: 1}, authorization);
                 return res && res.data.LIVE ? res.data.LIVE.slice(0, 30).map(l => this.gameReducer(l)) : [];
             default:
-                res = await this.get('search', {brands: type, is_recommend: 1});
+                res = await this.getWithToken('search', {brands: type, is_recommend: 1}, authorization);
                 return res ? this.shuffleArray((res.data.LIVE ? res.data.LIVE : []).concat(res.data.SLOTS)).slice(0, 30).map(l => this.gameReducer(l)) : [];
         }
     }

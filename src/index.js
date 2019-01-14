@@ -16,6 +16,12 @@ const server = new ApolloServer({
         promotionAPI: new promotionAPI(),
         vipAPI: new vipAPI()
     }),
+    context: ({req}) => {
+        const authorization = (req.headers && req.headers.authorization) || '';
+        return {
+            authorization
+        }
+    },
     playground: process.env.NODE_ENV !== 'production'
 });
 

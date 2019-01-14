@@ -6,12 +6,12 @@ module.exports = {
 
         upgrade: async(_, __, {dataSources}) => dataSources.vipAPI.upgradeProgress(),
         
-        homeRecommends: async (_, __, {dataSources}) => {
-            const [SlotsRecommend, PTRecommend, Newest, Best, Discover, Heart] = await Promise.all([
-                dataSources.gameAPI.getRecommendGames('SLOTS'),
-                dataSources.gameAPI.getRecommendGames('PT'),
-                dataSources.gameAPI.getNewest(),
-                dataSources.gameAPI.getBest(),
+        homeRecommends: async (_, __, {dataSources, authorization}) => {
+            const [SlotsRecommend, PTRecommend, Discover, Heart] = await Promise.all([
+                dataSources.gameAPI.getRecommendGames('SLOTS', authorization),
+                dataSources.gameAPI.getRecommendGames('PT', authorization),
+                // dataSources.gameAPI.getNewest(),
+                // dataSources.gameAPI.getBest(),
                 dataSources.gameAPI.getDiscover(),
                 dataSources.gameAPI.getHeart(),
             ])
