@@ -16,7 +16,7 @@ class PromotionAPI extends DataSource8xx {
                 categories: ["LIVE", "SLOTS", "SPORTS"],
                 currency: "CNY",
                 id: "0983c890-f8cb-11e8-81e6-cde074a754d4",
-                period: {from: "2018-12-26T00:00:00+00:00", to: "2019-01-27T15:59:59+00:00"},
+                period: {from: "2018-12-26T00:00:00+00:00", to: "2019-01-31T15:59:59+00:00"},
                 status: "publish",
                 title: JSON.stringify({"zh-TW": "新人福利，註冊即送", "zh-CN": "新人福利，注册即送", "en-GB": "新人福利，注册即送"}),
                 max: '￥58'
