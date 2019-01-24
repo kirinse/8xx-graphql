@@ -11,16 +11,16 @@ class PromotionAPI extends DataSource8xx {
     }
     async getPromotions() {
         const res = [
-            {
-                banner: "8758eb24beb630e31581881b347fea7e",
-                categories: ["LIVE", "SLOTS", "SPORTS"],
-                currency: "CNY",
-                id: "0983c890-f8cb-11e8-81e6-cde074a754d4",
-                period: {from: "2018-12-26T00:00:00+00:00", to: "2019-01-31T15:59:59+00:00"},
-                status: "publish",
-                title: JSON.stringify({"zh-TW": "新人福利，註冊即送", "zh-CN": "新人福利，注册即送", "en-GB": "新人福利，注册即送"}),
-                max: '￥58'
-            },
+            // {
+            //     banner: "8758eb24beb630e31581881b347fea7e",
+            //     categories: ["LIVE", "SLOTS", "SPORTS"],
+            //     currency: "CNY",
+            //     id: "0983c890-f8cb-11e8-81e6-cde074a754d4",
+            //     period: {from: "2018-12-26T00:00:00+00:00", to: "2019-01-31T15:59:59+00:00"},
+            //     status: "publish",
+            //     title: JSON.stringify({"zh-TW": "新人福利，註冊即送", "zh-CN": "新人福利，注册即送", "en-GB": "新人福利，注册即送"}),
+            //     max: '￥58'
+            // },
             {
                 banner: "a7551fa32ac618b59ecfeb98a49e9149",
                 categories: ["DEPOSIT", "SLOTS"],
