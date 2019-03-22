@@ -80,15 +80,15 @@ module.exports = {
                                 code: 'AG',
                                 data: null,
                             },
-                            {
-                                name: JSON.stringify({
-                                    'zh-CN': 'PNG', 
-                                    'zh-TW': 'PNG',
-                                    'en-GB': 'PNG'
-                                }),
-                                code: 'PNG',
-                                data: null,
-                            },
+                            // {
+                            //     name: JSON.stringify({
+                            //         'zh-CN': 'PNG',
+                            //         'zh-TW': 'PNG',
+                            //         'en-GB': 'PNG'
+                            //     }),
+                            //     code: 'PNG',
+                            //     data: null,
+                            // },
                             {
                                 name: JSON.stringify({
                                     'zh-CN': '哈巴', 
