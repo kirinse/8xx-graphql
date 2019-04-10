@@ -191,7 +191,41 @@ module.exports = {
                     ]
                 },
             }
-        }
-    },
+        },
+
+        hotSlots: async(_, __, {dataSources}) => dataSources.gameAPI.getBest('SLOTS'),
+
+        hotLives: async(_, __, {dataSources}) => dataSources.gameAPI.getBest('LIVE'),
+
+        gameSearchHot: () => ['猴子', '女王', '财神', '巨兽', '大'],
+
+        playUrl: async(_, params, {dataSources, authorization}) => dataSources.gameAPI.getPlayUrl(params, authorization),
+    
+        gameUpdates: (_, {version}, {dataSources}) => dataSources.gameAPI.gameUpdates(version),
+
+        appRecommendGames: async(_, __, {dataSources}) => dataSources.gameAPI.getAppRecommendGames(),
+
+        carousels: (_, __, ___) => ([
+            {
+                title: '笔笔存，笔笔送',
+                subtitle: '老虎机超高存送比例！拿到手软！',
+                backgroundImage: 'carousel_2',
+                page: "DiscountScreen",
+                params: JSON.stringify({id: ["3457b880-cde9-11e8-bd33-afa08e04259b","1c4e1cb0-cde9-11e8-90f7-a97874e443f4","e0fdb620-cdbd-11e8-ac72-9339fee009de"]})
+            },
+            {
+                title: '网红直播捕鱼游戏',
+                subtitle: '机会难得！精彩不容错过',
+                backgroundImage: 'carousel_3',
+                link: "http://www.yy.com/86675040"
+            },
+            {
+                title: '拥有业界独有的无限层级代理模式',
+                subtitle: '无需申请！无需审核！',
+                backgroundImage: 'carousel_4',
+                page: "AffiliateScreen",
+            },
+        ])
+    }
   }
 
