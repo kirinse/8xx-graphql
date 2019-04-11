@@ -197,7 +197,7 @@ module.exports = {
 
         hotLives: async(_, __, {dataSources}) => dataSources.gameAPI.getBest('LIVE'),
 
-        gameSearchHot: () => ['猴子', '女王', '财神', '巨兽', '大'],
+        gameSearchHot: () => ['百家乐', '轮盘', '花花公子', '幸运', '宝藏'],
 
         playUrl: async(_, params, {dataSources, authorization}) => dataSources.gameAPI.getPlayUrl(params, authorization),
     
