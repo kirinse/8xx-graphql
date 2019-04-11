@@ -6,6 +6,30 @@ const typeDefs = gql`
         homeRecommends: Recommends!
         promotions: [Promotion]!
         upgrade: Upgrade
+        hotSlots: [Game!]!
+        hotLives: [Game!]!
+        gameSearchHot: [String!]!
+        playUrl(gameId: String!, mode: PlayMode!, type: PlayType!, locale: String): String
+        gameUpdates(version: Int!): GameUpdates!
+        appRecommendGames: [GameWithImage!]!
+        carousels: [Carousel!]!
+    }
+    type Carousel{
+        title: String!
+        subtitle: String!
+        backgroundImage: String!
+        link: String
+        page: String
+        params: String
+    }
+    type GameWithImage{
+        image: String
+        product: Game
+    }
+    type GameUpdates{
+        version: Int!
+        updates: [Game!]
+        deletes: [Game!]
     }
     type Upgrade{
         nextRank: String
@@ -119,6 +143,14 @@ const typeDefs = gql`
     type Demo{
         flash: Boolean!
         html5: Boolean!
+    }
+    enum PlayType{
+        flash
+        html5
+    }
+    enum PlayMode{
+        demo
+        play
     }
 `
 
