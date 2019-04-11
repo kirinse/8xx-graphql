@@ -14,7 +14,7 @@ const server = new ApolloServer({
     dataSources: () => ({
         gameAPI: new gameAPI(),
         promotionAPI: new promotionAPI(),
-        vipAPI: new vipAPI()
+        vipAPI: new vipAPI(),
     }),
     context: ({req}) => {
         const authorization = (req.headers && req.headers.authorization) || '';
