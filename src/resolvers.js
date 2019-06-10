@@ -89,15 +89,15 @@ module.exports = {
                             //     code: 'PNG',
                             //     data: null,
                             // },
-                            {
-                                name: JSON.stringify({
-                                    'zh-CN': '哈巴', 
-                                    'zh-TW': '哈巴',
-                                    'en-GB': 'HABA'
-                                }),
-                                code: 'HABA',
-                                data: null,
-                            },
+                            // {
+                            //     name: JSON.stringify({
+                            //         'zh-CN': '哈巴',
+                            //         'zh-TW': '哈巴',
+                            //         'en-GB': 'HABA'
+                            //     }),
+                            //     code: 'HABA',
+                            //     data: null,
+                            // },
                         ]
                     },
                     // {
